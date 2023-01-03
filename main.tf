@@ -5,13 +5,14 @@ resource "google_monitoring_alert_policy" "alert_policy" {
   notification_channels = var.notification_channels
   user_labels           = var.user_labels
   enabled               = var.enabled
-  dynamic "documentation" {
+  documentation         = var.documentation
+  /*dynamic "documentation" {
     for_each = length(var.documentation) > 0 ? [true] : [false]
     content {
       content = lookup(var.documentation, "content", "")
       mime_type       = lookup(var.documentation, "mime_type", "")
     }
-  }
+  }*/
 
   dynamic "conditions" {
     for_each = { for key, value in var.conditions :
