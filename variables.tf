@@ -21,7 +21,7 @@ variable "user_labels" {
 
 variable "documentation" {
   type = map(string)
-  default     = null
+  default     = {}
   description = "(Optional) Documentation that is included with notifications and incidents related to this policy. Best practice is for the documentation to include information to help responders understand, mitigate, escalate, and correct the underlying problems detected by the alerting policy. Notification channels that have limited capacity might not show this documentation."
 }
 
